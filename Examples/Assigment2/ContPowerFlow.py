@@ -22,10 +22,10 @@ def uji(gij,bij,tetai,tetaj):
 def tji(gij,bij,tetai,tetaj):
     return (gij*np.cos(tetaj-tetai)+bij*np.sin(tetaj-tetai))
 
-r12 = 0.05
+r12 = 0.1
 x12 = 0.2
 r13 = 0.05
-x13 = 0.1
+x13 = 0.25
 r23 = 0.05
 x23 = 0.15
 v1 = 1.0
@@ -43,9 +43,9 @@ g23 = gij(r23, x23)
 b23 = bij(r23, x23)
 
 # Loads
-P01 = 1.0
+P01 = 0.8
 Q01 = 0.5
-P02 = 0.5
+P02 = 0.4
 Q02 = 0.5
 
 # Define useful functions
@@ -183,6 +183,7 @@ i = 0
 #  Iterative loop for load flow calculations
 while i < 4:
     # Calculate net injections
+    print('-------------------Iteration ', i, '-------------------')
     p1, p2, p3, q1, q2, q3 = PQ_injections(v1, v2, v3, teta1, teta2, teta3)
     print(' ')
     #   print('Injction: ', pA1,p2,p3,q1,q2,q3)
